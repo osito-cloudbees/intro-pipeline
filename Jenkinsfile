@@ -29,15 +29,17 @@ pipeline {
             }
           }
         }
-      }
-        stage('Checkpoint') {
+    }
+    stage('Checkpoint') {
          agent none
          steps {
             checkpoint 'Checkpoint'
          }
-      }
+    }
     stage('Deploy'){
-      echo 'Deploying...'
+      steps {
+        echo 'Deploying...'
+      }
     }
   }
   environment {
