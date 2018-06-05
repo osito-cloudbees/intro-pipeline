@@ -11,8 +11,7 @@ pipeline {
         echo "${TEST_USER_PSW}"
       }
     }
-  }
-        stage('Testing') {
+    stage('Testing') {
         failFast true
         parallel {
           stage('Java 8') {
@@ -31,6 +30,7 @@ pipeline {
           }
         }
       }
+  }
   environment {
     MY_NAME = 'David'
     TEST_USER = credentials('test-user')
