@@ -37,6 +37,9 @@ pipeline {
          }
     }
     stage('Deploy'){
+      agent {
+        label 'jdk8'
+      }
       steps {
         echo 'Deploying...'
       }
